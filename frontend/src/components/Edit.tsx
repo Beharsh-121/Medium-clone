@@ -15,7 +15,7 @@ export function Edit({ postId, title, content, name }: ArticleProps) {
   const [toggle, setToggle] = useState(false);
   const [updatedTitle, setUpdatedTitle] = useState(title);
   const [updatedContent, setUpdatedContent] = useState(content);
-  const [date, setDate] = useState<string>("November " + (Math.floor(Math.random() * 31) + 1) + ", 2023");
+  const [date] = useState<string>("November " + (Math.floor(Math.random() * 31) + 1) + ", 2023");
 
   const handleCancel = () => {
     window.location.href = `/profile`;
@@ -38,6 +38,7 @@ export function Edit({ postId, title, content, name }: ArticleProps) {
           },
         }
       );
+      console.log(toggle);
       console.log(response.data);
       setToggle(false);
       window.location.href = `/profile`;
